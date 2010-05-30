@@ -1,7 +1,6 @@
-// MapKitPlugin.j
-// MapKitPlugin
+// WavePlugin.j
 //
-// Created by Francisco Tolmasky.
+// Created by Sergio Felix.
 // Copyright (c) 2010 280 North, Inc.
 //
 // Permission is hereby granted, free of charge, to any person
@@ -27,7 +26,7 @@
 
 @import <AtlasKit/AtlasKit.j>
 
-@implementation MapKitPlugin : AKPlugin
+@implementation WavePlugin : AKPlugin
 {
 }
 
