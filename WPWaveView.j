@@ -54,14 +54,10 @@
 @end
 
 
-var performWhenGoogleScriptLoaded = function()
-{
-    
+var performWhenGoogleScriptLoaded = function(){
     var DOMScriptElement = document.createElement("script");
-
-    DOMScriptElement.src = "http://www.google.com/jsapi?callback=_WPWaveViewGoogleAjaxLoaderLoaded";
+    DOMScriptElement.src = "http://www.google.com/jsapi ?callback=_WPWaveViewGoogleAjaxLoaderLoaded";
     DOMScriptElement.type = "text/javascript";
-
     document.getElementsByTagName("head")[0].appendChild(DOMScriptElement);
 }
 
