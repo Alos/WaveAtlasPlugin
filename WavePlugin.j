@@ -1,7 +1,6 @@
 // WavePlugin.j
 //
 // Created by Sergio Felix.
-// Copyright (c) 2010 280 North, Inc.
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
