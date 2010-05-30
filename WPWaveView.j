@@ -53,34 +53,20 @@
 
 @end
 
-var GoogleScriptQueue   = [];
 
-var performWhenGoogleScriptLoaded = function(/*Function*/ aFunction)
+var performWhenGoogleScriptLoaded = function()
 {
-    GoogleScriptQueue.push(aFunction);
+    
+    var DOMScriptElement = document.createElement("script");
 
-    performWhenGoogleScriptLoaded = function()
-    {
-        GoogleScriptQueue.push(aFunction);
-    }
+    DOMScriptElement.src = "http://www.google.com/jsapi?callback=_WPWaveViewGoogleAjaxLoaderLoaded";
+    DOMScriptElement.type = "text/javascript";
 
-    // Maps is already loaded
-    if (window.google)
-        _WPWaveViewGoogleAjaxLoaderLoaded();
-
-    else
-    {
-        var DOMScriptElement = document.createElement("script");
-
-        DOMScriptElement.src = "http://www.google.com/jsapi?callback=_WPWaveViewGoogleAjaxLoaderLoaded";
-        DOMScriptElement.type = "text/javascript";
-
-        document.getElementsByTagName("head")[0].appendChild(DOMScriptElement);
-    }
+    document.getElementsByTagName("head")[0].appendChild(DOMScriptElement);
 }
 
 function _WPWaveViewGoogleAjaxLoaderLoaded()
-{
+{   
     google.load("wave", 1);
     [[CPRunLoop currentRunLoop] limitDateForMode:CPDefaultRunLoopMode];
 }
