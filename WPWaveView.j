@@ -5,22 +5,20 @@
 {
     DOMElement  wp_DOMWaveElement;
     Object _wavePanel;
-    CPString _waveID @accessors;
+    CPString waveID @accessors;
 }
 
 - (id)init
 {
     if (self = [super init])
     {
-        
+        prepareGoogleAPI();
     }
     return self;
 }
 
 -(void) _buildDOM
 {
-    performWhenGoogleScriptLoaded(function()
-    {
         wp_DOMWaveElement = document.createElement("div");
         wp_DOMWaveElement.id = "WPWaveView" + [self UID];
 
@@ -46,15 +44,14 @@
         }
 
         _wavePanel = new google.wave.WavePanel(embedOptions);
-        _wavePanel.loadWave("googlewave.com"+_waveID);
-    }
-
+        _wavePanel.loadWave("googlewave.com"+waveID);
 }
 
 @end
 
 
-var performWhenGoogleScriptLoaded = function(){
+function prepareGoogleAPI()
+{
     var DOMScriptElement = document.createElement("script");
     DOMScriptElement.src = "http://www.google.com/jsapi ?callback=_WPWaveViewGoogleAjaxLoaderLoaded";
     DOMScriptElement.type = "text/javascript";
@@ -65,6 +62,7 @@ function _WPWaveViewGoogleAjaxLoaderLoaded()
 {   
     google.load("wave", 1);
     [[CPRunLoop currentRunLoop] limitDateForMode:CPDefaultRunLoopMode];
+    [self _buildDOM];
 }
 
 @implementation CPWaveView (CPCoding)

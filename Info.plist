@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CPBundleIdentifier</key>
-	<string>com.springenwerk.MapKit</string>
+	<string>com.alos.WavePlugin</string>
 	<key>CPBundleInfoDictionaryVersion</key>
 	<real>6.0</real>
 	<key>CPBundleName</key>
-	<string>MapKit</string>
+	<string>WavePlugin</string>
 	<key>CPBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CPBundlePlatforms</key>
