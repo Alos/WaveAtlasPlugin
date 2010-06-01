@@ -12,7 +12,7 @@
 {
     if (self = [super init])
     {
-        prepareGoogleAPI();
+       [self _buildDOM];
     }
     return self;
 }
@@ -62,7 +62,7 @@ function _WPWaveViewGoogleAjaxLoaderLoaded()
 {   
     google.load("wave", 1);
     [[CPRunLoop currentRunLoop] limitDateForMode:CPDefaultRunLoopMode];
-    [self _buildDOM];
+    
 }
 
 @implementation CPWaveView (CPCoding)
