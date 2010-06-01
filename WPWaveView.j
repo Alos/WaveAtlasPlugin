@@ -1,7 +1,7 @@
 
 @import <Foundation/CPObject.j>
 
-@implementation CPWaveView : CPView
+@implementation WPWaveView : CPView
 {
     DOMElement  wp_DOMWaveElement;
     Object _wavePanel;
