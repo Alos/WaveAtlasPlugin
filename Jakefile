@@ -21,7 +21,7 @@ bundle ("WavePlugin", function(task)
     task.setEmail("alos @nospam@ 2me.com");
     task.setSummary("Plugin framework for Atlas");
     task.setIdentifier("com.alos.WavePlugin");
-    task.setSources(new FileList("*.j").exclude("WavePlugin.j").exclude("WavePluginViewAttributeInspector.j").exclude("MKMapView+Integration.j"), [environment.Browser, environment.CommonJS]);
+    task.setSources(new FileList("*.j").exclude("WavePlugin.j").exclude("WavePluginAttributeInspector.j").exclude("WPWaveView+Integration.j"), [environment.Browser, environment.CommonJS]);
     task.setResources([]);//All the resources belong to the plugin
     task.setFlattensSources(true);
 
@@ -33,7 +33,7 @@ bundle ("WavePlugin", function(task)
 
 framework ("WavePlugin.atlasplugin", function(task)
 {
-    task.setBuildIntermediatesPath(FILE.join($BUILD_DIR, "MapKit.atlasplugin.build", $CONFIGURATION))
+    task.setBuildIntermediatesPath(FILE.join($BUILD_DIR, "WavePlugin.atlasplugin.build", $CONFIGURATION))
     task.setBuildPath(FILE.join($BUILD_DIR, $CONFIGURATION));
 
     task.setAuthor("Alos");
